@@ -1,0 +1,8 @@
+{
+  "type": "client-python",
+  "require": {
+    "sdkfabric/starwars": {
+      "target": "./src/sdk"
+    }
+  }
+}
