@@ -17,6 +17,9 @@ class SpecieTag(sdkgen.TagAbstract):
 
 
     def get_all(self, search: str) -> SpecieCollection:
+        """
+        Get all the species resources
+        """
         try:
             path_params = {}
 
@@ -40,6 +43,9 @@ class SpecieTag(sdkgen.TagAbstract):
             raise sdkgen.ClientException("An unknown error occurred: " + str(e))
 
     def get(self, id: str) -> Specie:
+        """
+        Get a specific species resource
+        """
         try:
             path_params = {}
             path_params["id"] = id

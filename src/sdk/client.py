@@ -58,6 +58,5 @@ class Client(sdkgen.ClientAbstract):
 
 
     @staticmethod
-    def build(clientId: str, clientSecret: str, tokenStore: sdkgen.TokenStoreInterface, scopes: List[str]):
-        return Client("https://swapi.dev/api", sdkgen.OAuth2(clientId, clientSecret, "https://api.typehub.cloud/authorization/token", "", tokenStore, scopes))
-
+    def build(credentials: sdkgen.CredentialsInterface):
+        return Client("https://swapi.dev/api", credentials)

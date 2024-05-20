@@ -17,6 +17,9 @@ class FilmTag(sdkgen.TagAbstract):
 
 
     def get_all(self, search: str) -> FilmCollection:
+        """
+        Get all the film resources
+        """
         try:
             path_params = {}
 
@@ -40,6 +43,9 @@ class FilmTag(sdkgen.TagAbstract):
             raise sdkgen.ClientException("An unknown error occurred: " + str(e))
 
     def get(self, id: str) -> Film:
+        """
+        Get a specific film resource
+        """
         try:
             path_params = {}
             path_params["id"] = id

@@ -17,6 +17,9 @@ class PeopleTag(sdkgen.TagAbstract):
 
 
     def get_all(self, search: str) -> PeopleCollection:
+        """
+        Get all the people resources
+        """
         try:
             path_params = {}
 
@@ -40,6 +43,9 @@ class PeopleTag(sdkgen.TagAbstract):
             raise sdkgen.ClientException("An unknown error occurred: " + str(e))
 
     def get(self, id: str) -> People:
+        """
+        Get a specific people resource
+        """
         try:
             path_params = {}
             path_params["id"] = id

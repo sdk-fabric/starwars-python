@@ -17,6 +17,9 @@ class PlanetTag(sdkgen.TagAbstract):
 
 
     def get_all(self, search: str) -> PlanetCollection:
+        """
+        Get all the planets resources
+        """
         try:
             path_params = {}
 
@@ -40,6 +43,9 @@ class PlanetTag(sdkgen.TagAbstract):
             raise sdkgen.ClientException("An unknown error occurred: " + str(e))
 
     def get(self, id: str) -> Planet:
+        """
+        Get a specific planets resource
+        """
         try:
             path_params = {}
             path_params["id"] = id

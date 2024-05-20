@@ -17,6 +17,9 @@ class VehicleTag(sdkgen.TagAbstract):
 
 
     def get_all(self, search: str) -> VehicleCollection:
+        """
+        Get all the vehicle resources
+        """
         try:
             path_params = {}
 
@@ -40,6 +43,9 @@ class VehicleTag(sdkgen.TagAbstract):
             raise sdkgen.ClientException("An unknown error occurred: " + str(e))
 
     def get(self, id: str) -> Vehicle:
+        """
+        Get a specific vehicle resource
+        """
         try:
             path_params = {}
             path_params["id"] = id
