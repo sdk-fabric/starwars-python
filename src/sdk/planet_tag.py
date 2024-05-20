@@ -16,12 +16,12 @@ class PlanetTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, name: str) -> PlanetCollection:
+    def get_all(self, search: str) -> PlanetCollection:
         try:
             path_params = {}
 
             query_params = {}
-            query_params["name"] = name
+            query_params["search"] = search
 
             query_struct_names = []
 

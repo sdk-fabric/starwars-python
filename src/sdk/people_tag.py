@@ -16,12 +16,12 @@ class PeopleTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, name: str) -> PeopleCollection:
+    def get_all(self, search: str) -> PeopleCollection:
         try:
             path_params = {}
 
             query_params = {}
-            query_params["name"] = name
+            query_params["search"] = search
 
             query_struct_names = []
 

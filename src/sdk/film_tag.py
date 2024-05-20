@@ -16,12 +16,12 @@ class FilmTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, title: str) -> FilmCollection:
+    def get_all(self, search: str) -> FilmCollection:
         try:
             path_params = {}
 
             query_params = {}
-            query_params["title"] = title
+            query_params["search"] = search
 
             query_struct_names = []
 

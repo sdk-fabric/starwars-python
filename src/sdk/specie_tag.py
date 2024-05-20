@@ -16,12 +16,12 @@ class SpecieTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, name: str) -> SpecieCollection:
+    def get_all(self, search: str) -> SpecieCollection:
         try:
             path_params = {}
 
             query_params = {}
-            query_params["name"] = name
+            query_params["search"] = search
 
             query_struct_names = []
 

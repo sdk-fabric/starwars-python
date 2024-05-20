@@ -16,13 +16,12 @@ class VehicleTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, name: str, model: str) -> VehicleCollection:
+    def get_all(self, search: str) -> VehicleCollection:
         try:
             path_params = {}
 
             query_params = {}
-            query_params["name"] = name
-            query_params["model"] = model
+            query_params["search"] = search
 
             query_struct_names = []
 
