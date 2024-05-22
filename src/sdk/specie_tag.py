@@ -18,7 +18,7 @@ class SpecieTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> SpecieCollection:
         """
-        Get all the species resources
+        Get all the species
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class SpecieTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Specie:
         """
-        Get a specific species resource
+        Get a specific specie
         """
         try:
             path_params = {}

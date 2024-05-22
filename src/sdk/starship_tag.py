@@ -18,7 +18,7 @@ class StarshipTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> StarshipCollection:
         """
-        Get all the starship resources
+        Get all the starships
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class StarshipTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Starship:
         """
-        Get a specific starship resource
+        Get a specific starship
         """
         try:
             path_params = {}

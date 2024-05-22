@@ -18,7 +18,7 @@ class FilmTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> FilmCollection:
         """
-        Get all the film resources
+        Get all the films
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class FilmTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Film:
         """
-        Get a specific film resource
+        Get a specific film
         """
         try:
             path_params = {}

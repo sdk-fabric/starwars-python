@@ -18,7 +18,7 @@ class PeopleTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> PeopleCollection:
         """
-        Get all the people resources
+        Get all the people
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class PeopleTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> People:
         """
-        Get a specific people resource
+        Get a specific people
         """
         try:
             path_params = {}

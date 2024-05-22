@@ -18,7 +18,7 @@ class VehicleTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> VehicleCollection:
         """
-        Get all the vehicle resources
+        Get all the vehicles
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class VehicleTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Vehicle:
         """
-        Get a specific vehicle resource
+        Get a specific vehicle
         """
         try:
             path_params = {}

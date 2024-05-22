@@ -18,7 +18,7 @@ class PlanetTag(sdkgen.TagAbstract):
 
     def get_all(self, search: str) -> PlanetCollection:
         """
-        Get all the planets resources
+        Get all the planets
         """
         try:
             path_params = {}
@@ -44,7 +44,7 @@ class PlanetTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Planet:
         """
-        Get a specific planets resource
+        Get a specific planet
         """
         try:
             path_params = {}
