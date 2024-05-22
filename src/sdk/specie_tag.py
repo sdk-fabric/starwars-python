@@ -44,7 +44,7 @@ class SpecieTag(sdkgen.TagAbstract):
 
     def get(self, id: str) -> Specie:
         """
-        Get a specific specie
+        Get a specific species
         """
         try:
             path_params = {}

@@ -58,5 +58,6 @@ class Client(sdkgen.ClientAbstract):
 
 
     @staticmethod
-    def build(credentials: sdkgen.CredentialsInterface):
-        return Client("https://swapi.dev/api", credentials)
+    def build():
+        return Client("https://swapi.dev/api", sdkgen.Anonymous())
+
