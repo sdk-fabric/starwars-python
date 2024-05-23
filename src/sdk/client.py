@@ -11,8 +11,8 @@ from typing import List
 from .people_tag import PeopleTag
 from .film_tag import FilmTag
 from .starship_tag import StarshipTag
+from .species_tag import SpeciesTag
 from .vehicle_tag import VehicleTag
-from .specie_tag import SpecieTag
 from .planet_tag import PlanetTag
 
 class Client(sdkgen.ClientAbstract):
@@ -37,14 +37,14 @@ class Client(sdkgen.ClientAbstract):
             self.parser
         )
 
-    def vehicle(self) -> VehicleTag:
-        return VehicleTag(
+    def species(self) -> SpeciesTag:
+        return SpeciesTag(
             self.http_client,
             self.parser
         )
 
-    def specie(self) -> SpecieTag:
-        return SpecieTag(
+    def vehicle(self) -> VehicleTag:
+        return VehicleTag(
             self.http_client,
             self.parser
         )
