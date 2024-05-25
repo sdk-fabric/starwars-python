@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A Film is a single film.
+# A Film is a single film
 class Film(BaseModel):
     title: Optional[str] = Field(default=None, alias="title")
     episode_id: Optional[int] = Field(default=None, alias="episode_id")

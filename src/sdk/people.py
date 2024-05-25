@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A People is an individual person or character within the Star Wars universe.
+# A People is an individual person or character within the Star Wars universe
 class People(BaseModel):
     name: Optional[str] = Field(default=None, alias="name")
     birth_year: Optional[str] = Field(default=None, alias="birth_year")

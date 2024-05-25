@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A Starship is a single transport craft that has hyperdrive capability.
+# A Starship is a single transport craft that has hyperdrive capability
 class Starship(BaseModel):
     name: Optional[str] = Field(default=None, alias="name")
     model: Optional[str] = Field(default=None, alias="model")

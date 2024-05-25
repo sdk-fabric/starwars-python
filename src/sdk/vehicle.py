@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A Vehicle is a single transport craft that does not have hyperdrive capability.
+# A Vehicle is a single transport craft that does not have hyperdrive capability
 class Vehicle(BaseModel):
     name: Optional[str] = Field(default=None, alias="name")
     model: Optional[str] = Field(default=None, alias="model")

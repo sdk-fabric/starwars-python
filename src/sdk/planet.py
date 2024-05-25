@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY.
+# A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY
 class Planet(BaseModel):
     name: Optional[str] = Field(default=None, alias="name")
     diameter: Optional[str] = Field(default=None, alias="diameter")

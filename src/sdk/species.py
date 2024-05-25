@@ -9,7 +9,7 @@ from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 import datetime
 
 
-# A Species is a type of person or character within the Star Wars Universe.
+# A Species is a type of person or character within the Star Wars Universe
 class Species(BaseModel):
     name: Optional[str] = Field(default=None, alias="name")
     classification: Optional[str] = Field(default=None, alias="classification")
