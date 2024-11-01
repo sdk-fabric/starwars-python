@@ -7,6 +7,9 @@ import requests
 import sdkgen
 from requests import RequestException
 from typing import List
+from typing import Dict
+from typing import Any
+from urllib.parse import parse_qs
 
 from .people_tag import PeopleTag
 from .film_tag import FilmTag
@@ -57,7 +60,7 @@ class Client(sdkgen.ClientAbstract):
 
 
 
-    @staticmethod
-    def build():
-        return Client("https://swapi.dev/api", sdkgen.Anonymous())
 
+    @staticmethod
+    def buildAnonymous():
+        return Client("https://swapi.dev/api", sdkgen.Anonymous())
