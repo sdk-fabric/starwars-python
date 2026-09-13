@@ -15,37 +15,37 @@ from sdk.client import Client
 client = Client.build("[access_token]")
 
 # Get all the people.
-response = client.people().get_all("search")
+response = client.people().getAll("search")
 
 # Get a specific people.
 response = client.people().get("id")
 
 # Get all the films.
-response = client.film().get_all("search")
+response = client.film().getAll("search")
 
 # Get a specific film.
 response = client.film().get("id")
 
 # Get all the starships.
-response = client.starship().get_all("search")
+response = client.starship().getAll("search")
 
 # Get a specific starship.
 response = client.starship().get("id")
 
 # Get all the species.
-response = client.species().get_all("search")
+response = client.species().getAll("search")
 
 # Get a specific species.
 response = client.species().get("id")
 
 # Get all the vehicles.
-response = client.vehicle().get_all("search")
+response = client.vehicle().getAll("search")
 
 # Get a specific vehicle.
 response = client.vehicle().get("id")
 
 # Get all the planets.
-response = client.planet().get_all("search")
+response = client.planet().getAll("search")
 
 # Get a specific planet.
 response = client.planet().get("id")
