@@ -19,38 +19,6 @@ class PlanetTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, search: str) -> PlanetCollection:
-        """
-        Get all the planets
-        """
-        try:
-            path_params = {}
-
-            query_params = {}
-            query_params['search'] = search
-
-            query_struct_names = []
-
-            url = self.parser.url('/planets', path_params)
-
-            options = {}
-            options['headers'] = {}
-            options['params'] = self.parser.query(query_params, query_struct_names)
-
-
-
-            response = self.http_client.request('GET', url, **options)
-
-            if response.status_code >= 200 and response.status_code < 300:
-                data = PlanetCollection.model_validate_json(json_data=response.content)
-
-                return data
-
-            statusCode = response.status_code
-            raise sdkgen.UnknownStatusCodeException('The server returned an unknown status code: ' + str(statusCode))
-        except RequestException as e:
-            raise sdkgen.ClientException('An unknown error occurred: ' + str(e))
-
     def get(self, id: str) -> Planet:
         """
         Get a specific planet
@@ -75,6 +43,38 @@ class PlanetTag(sdkgen.TagAbstract):
 
             if response.status_code >= 200 and response.status_code < 300:
                 data = Planet.model_validate_json(json_data=response.content)
+
+                return data
+
+            statusCode = response.status_code
+            raise sdkgen.UnknownStatusCodeException('The server returned an unknown status code: ' + str(statusCode))
+        except RequestException as e:
+            raise sdkgen.ClientException('An unknown error occurred: ' + str(e))
+
+    def get_all(self, search: str) -> PlanetCollection:
+        """
+        Get all the planets
+        """
+        try:
+            path_params = {}
+
+            query_params = {}
+            query_params['search'] = search
+
+            query_struct_names = []
+
+            url = self.parser.url('/planets', path_params)
+
+            options = {}
+            options['headers'] = {}
+            options['params'] = self.parser.query(query_params, query_struct_names)
+
+
+
+            response = self.http_client.request('GET', url, **options)
+
+            if response.status_code >= 200 and response.status_code < 300:
+                data = PlanetCollection.model_validate_json(json_data=response.content)
 
                 return data
 

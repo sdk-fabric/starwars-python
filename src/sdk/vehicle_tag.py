@@ -19,38 +19,6 @@ class VehicleTag(sdkgen.TagAbstract):
         super().__init__(http_client, parser)
 
 
-    def get_all(self, search: str) -> VehicleCollection:
-        """
-        Get all the vehicles
-        """
-        try:
-            path_params = {}
-
-            query_params = {}
-            query_params['search'] = search
-
-            query_struct_names = []
-
-            url = self.parser.url('/vehicles', path_params)
-
-            options = {}
-            options['headers'] = {}
-            options['params'] = self.parser.query(query_params, query_struct_names)
-
-
-
-            response = self.http_client.request('GET', url, **options)
-
-            if response.status_code >= 200 and response.status_code < 300:
-                data = VehicleCollection.model_validate_json(json_data=response.content)
-
-                return data
-
-            statusCode = response.status_code
-            raise sdkgen.UnknownStatusCodeException('The server returned an unknown status code: ' + str(statusCode))
-        except RequestException as e:
-            raise sdkgen.ClientException('An unknown error occurred: ' + str(e))
-
     def get(self, id: str) -> Vehicle:
         """
         Get a specific vehicle
@@ -75,6 +43,38 @@ class VehicleTag(sdkgen.TagAbstract):
 
             if response.status_code >= 200 and response.status_code < 300:
                 data = Vehicle.model_validate_json(json_data=response.content)
+
+                return data
+
+            statusCode = response.status_code
+            raise sdkgen.UnknownStatusCodeException('The server returned an unknown status code: ' + str(statusCode))
+        except RequestException as e:
+            raise sdkgen.ClientException('An unknown error occurred: ' + str(e))
+
+    def get_all(self, search: str) -> VehicleCollection:
+        """
+        Get all the vehicles
+        """
+        try:
+            path_params = {}
+
+            query_params = {}
+            query_params['search'] = search
+
+            query_struct_names = []
+
+            url = self.parser.url('/vehicles', path_params)
+
+            options = {}
+            options['headers'] = {}
+            options['params'] = self.parser.query(query_params, query_struct_names)
+
+
+
+            response = self.http_client.request('GET', url, **options)
+
+            if response.status_code >= 200 and response.status_code < 300:
+                data = VehicleCollection.model_validate_json(json_data=response.content)
 
                 return data
 

@@ -5,27 +5,26 @@ https://sdkgen.app
 
 from pydantic import BaseModel, Field, GetCoreSchemaHandler, Tag
 from pydantic_core import CoreSchema, core_schema
-from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union
+from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union, Literal
 import datetime
 
 
 # A Species is a type of person or character within the Star Wars Universe
 class Species(BaseModel):
-    name: Optional[str] = Field(default=None, alias="name")
-    classification: Optional[str] = Field(default=None, alias="classification")
-    designation: Optional[str] = Field(default=None, alias="designation")
     average_height: Optional[str] = Field(default=None, alias="average_height")
     average_lifespan: Optional[str] = Field(default=None, alias="average_lifespan")
-    eye_colors: Optional[str] = Field(default=None, alias="eye_colors")
-    hair_colors: Optional[str] = Field(default=None, alias="hair_colors")
-    skin_colors: Optional[str] = Field(default=None, alias="skin_colors")
-    language: Optional[str] = Field(default=None, alias="language")
-    homeworld: Optional[str] = Field(default=None, alias="homeworld")
-    people: Optional[List[str]] = Field(default=None, alias="people")
-    films: Optional[List[str]] = Field(default=None, alias="films")
-    url: Optional[str] = Field(default=None, alias="url")
+    classification: Optional[str] = Field(default=None, alias="classification")
     created: Optional[datetime.datetime] = Field(default=None, alias="created")
+    designation: Optional[str] = Field(default=None, alias="designation")
     edited: Optional[datetime.datetime] = Field(default=None, alias="edited")
-    pass
+    eye_colors: Optional[str] = Field(default=None, alias="eye_colors")
+    films: Optional[List[str]] = Field(default=None, alias="films")
+    hair_colors: Optional[str] = Field(default=None, alias="hair_colors")
+    homeworld: Optional[str] = Field(default=None, alias="homeworld")
+    language: Optional[str] = Field(default=None, alias="language")
+    name: Optional[str] = Field(default=None, alias="name")
+    people: Optional[List[str]] = Field(default=None, alias="people")
+    skin_colors: Optional[str] = Field(default=None, alias="skin_colors")
+    url: Optional[str] = Field(default=None, alias="url")
 
 

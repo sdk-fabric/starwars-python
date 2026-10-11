@@ -11,22 +11,16 @@ from typing import Dict
 from typing import Any
 from urllib.parse import parse_qs
 
-from .people_tag import PeopleTag
 from .film_tag import FilmTag
-from .starship_tag import StarshipTag
-from .species_tag import SpeciesTag
-from .vehicle_tag import VehicleTag
+from .people_tag import PeopleTag
 from .planet_tag import PlanetTag
+from .species_tag import SpeciesTag
+from .starship_tag import StarshipTag
+from .vehicle_tag import VehicleTag
 
 class Client(sdkgen.ClientAbstract):
     def __init__(self, base_url: str, credentials: sdkgen.CredentialsInterface):
         super().__init__(base_url, credentials)
-
-    def people(self) -> PeopleTag:
-        return PeopleTag(
-            self.http_client,
-            self.parser
-        )
 
     def film(self) -> FilmTag:
         return FilmTag(
@@ -34,8 +28,14 @@ class Client(sdkgen.ClientAbstract):
             self.parser
         )
 
-    def starship(self) -> StarshipTag:
-        return StarshipTag(
+    def people(self) -> PeopleTag:
+        return PeopleTag(
+            self.http_client,
+            self.parser
+        )
+
+    def planet(self) -> PlanetTag:
+        return PlanetTag(
             self.http_client,
             self.parser
         )
@@ -46,14 +46,14 @@ class Client(sdkgen.ClientAbstract):
             self.parser
         )
 
-    def vehicle(self) -> VehicleTag:
-        return VehicleTag(
+    def starship(self) -> StarshipTag:
+        return StarshipTag(
             self.http_client,
             self.parser
         )
 
-    def planet(self) -> PlanetTag:
-        return PlanetTag(
+    def vehicle(self) -> VehicleTag:
+        return VehicleTag(
             self.http_client,
             self.parser
         )

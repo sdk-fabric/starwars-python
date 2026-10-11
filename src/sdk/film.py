@@ -5,26 +5,25 @@ https://sdkgen.app
 
 from pydantic import BaseModel, Field, GetCoreSchemaHandler, Tag
 from pydantic_core import CoreSchema, core_schema
-from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union
+from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union, Literal
 import datetime
 
 
 # A Film is a single film
 class Film(BaseModel):
-    title: Optional[str] = Field(default=None, alias="title")
+    characters: Optional[List[str]] = Field(default=None, alias="characters")
+    created: Optional[datetime.datetime] = Field(default=None, alias="created")
+    director: Optional[str] = Field(default=None, alias="director")
+    edited: Optional[datetime.datetime] = Field(default=None, alias="edited")
     episode_id: Optional[int] = Field(default=None, alias="episode_id")
     opening_crawl: Optional[str] = Field(default=None, alias="opening_crawl")
-    director: Optional[str] = Field(default=None, alias="director")
+    planets: Optional[List[str]] = Field(default=None, alias="planets")
     producer: Optional[str] = Field(default=None, alias="producer")
     release_date: Optional[datetime.date] = Field(default=None, alias="release_date")
     species: Optional[List[str]] = Field(default=None, alias="species")
     starships: Optional[List[str]] = Field(default=None, alias="starships")
-    vehicles: Optional[List[str]] = Field(default=None, alias="vehicles")
-    characters: Optional[List[str]] = Field(default=None, alias="characters")
-    planets: Optional[List[str]] = Field(default=None, alias="planets")
+    title: Optional[str] = Field(default=None, alias="title")
     url: Optional[str] = Field(default=None, alias="url")
-    created: Optional[datetime.datetime] = Field(default=None, alias="created")
-    edited: Optional[datetime.datetime] = Field(default=None, alias="edited")
-    pass
+    vehicles: Optional[List[str]] = Field(default=None, alias="vehicles")
 
 

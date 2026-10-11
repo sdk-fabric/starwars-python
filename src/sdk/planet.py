@@ -5,26 +5,25 @@ https://sdkgen.app
 
 from pydantic import BaseModel, Field, GetCoreSchemaHandler, Tag
 from pydantic_core import CoreSchema, core_schema
-from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union
+from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union, Literal
 import datetime
 
 
 # A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY
 class Planet(BaseModel):
-    name: Optional[str] = Field(default=None, alias="name")
-    diameter: Optional[str] = Field(default=None, alias="diameter")
-    rotation_period: Optional[str] = Field(default=None, alias="rotation_period")
-    orbital_period: Optional[str] = Field(default=None, alias="orbital_period")
-    gravity: Optional[str] = Field(default=None, alias="gravity")
-    population: Optional[str] = Field(default=None, alias="population")
     climate: Optional[str] = Field(default=None, alias="climate")
-    terrain: Optional[str] = Field(default=None, alias="terrain")
-    surface_water: Optional[str] = Field(default=None, alias="surface_water")
-    residents: Optional[List[str]] = Field(default=None, alias="residents")
-    films: Optional[List[str]] = Field(default=None, alias="films")
-    url: Optional[str] = Field(default=None, alias="url")
     created: Optional[datetime.datetime] = Field(default=None, alias="created")
+    diameter: Optional[str] = Field(default=None, alias="diameter")
     edited: Optional[datetime.datetime] = Field(default=None, alias="edited")
-    pass
+    films: Optional[List[str]] = Field(default=None, alias="films")
+    gravity: Optional[str] = Field(default=None, alias="gravity")
+    name: Optional[str] = Field(default=None, alias="name")
+    orbital_period: Optional[str] = Field(default=None, alias="orbital_period")
+    population: Optional[str] = Field(default=None, alias="population")
+    residents: Optional[List[str]] = Field(default=None, alias="residents")
+    rotation_period: Optional[str] = Field(default=None, alias="rotation_period")
+    surface_water: Optional[str] = Field(default=None, alias="surface_water")
+    terrain: Optional[str] = Field(default=None, alias="terrain")
+    url: Optional[str] = Field(default=None, alias="url")
 
 

@@ -5,30 +5,29 @@ https://sdkgen.app
 
 from pydantic import BaseModel, Field, GetCoreSchemaHandler, Tag
 from pydantic_core import CoreSchema, core_schema
-from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union
+from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union, Literal
 import datetime
 
 
 # A Starship is a single transport craft that has hyperdrive capability
 class Starship(BaseModel):
-    name: Optional[str] = Field(default=None, alias="name")
-    model: Optional[str] = Field(default=None, alias="model")
-    starship_class: Optional[str] = Field(default=None, alias="starship_class")
-    manufacturer: Optional[str] = Field(default=None, alias="manufacturer")
-    cost_in_credits: Optional[str] = Field(default=None, alias="cost_in_credits")
-    length: Optional[str] = Field(default=None, alias="length")
-    crew: Optional[str] = Field(default=None, alias="crew")
-    passengers: Optional[str] = Field(default=None, alias="passengers")
-    max_atmosphering_speed: Optional[str] = Field(default=None, alias="max_atmosphering_speed")
-    hyperdrive_rating: Optional[str] = Field(default=None, alias="hyperdrive_rating")
     mglt: Optional[str] = Field(default=None, alias="MGLT")
     cargo_capacity: Optional[str] = Field(default=None, alias="cargo_capacity")
     consumables: Optional[str] = Field(default=None, alias="consumables")
-    films: Optional[List[str]] = Field(default=None, alias="films")
-    pilots: Optional[List[str]] = Field(default=None, alias="pilots")
-    url: Optional[str] = Field(default=None, alias="url")
+    cost_in_credits: Optional[str] = Field(default=None, alias="cost_in_credits")
     created: Optional[datetime.datetime] = Field(default=None, alias="created")
+    crew: Optional[str] = Field(default=None, alias="crew")
     edited: Optional[datetime.datetime] = Field(default=None, alias="edited")
-    pass
+    films: Optional[List[str]] = Field(default=None, alias="films")
+    hyperdrive_rating: Optional[str] = Field(default=None, alias="hyperdrive_rating")
+    length: Optional[str] = Field(default=None, alias="length")
+    manufacturer: Optional[str] = Field(default=None, alias="manufacturer")
+    max_atmosphering_speed: Optional[str] = Field(default=None, alias="max_atmosphering_speed")
+    model: Optional[str] = Field(default=None, alias="model")
+    name: Optional[str] = Field(default=None, alias="name")
+    passengers: Optional[str] = Field(default=None, alias="passengers")
+    pilots: Optional[List[str]] = Field(default=None, alias="pilots")
+    starship_class: Optional[str] = Field(default=None, alias="starship_class")
+    url: Optional[str] = Field(default=None, alias="url")
 
 

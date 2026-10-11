@@ -5,13 +5,12 @@ https://sdkgen.app
 
 from pydantic import BaseModel, Field, GetCoreSchemaHandler, Tag
 from pydantic_core import CoreSchema, core_schema
-from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union
+from typing import Any, Dict, Generic, List, Optional, TypeVar, Annotated, Union, Literal
 
 
 class Collection(BaseModel):
     count: Optional[int] = Field(default=None, alias="count")
     next: Optional[str] = Field(default=None, alias="next")
     previous: Optional[str] = Field(default=None, alias="previous")
-    pass
 
 
